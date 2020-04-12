@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(./image/people.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./image/people.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header .head {
+  padding: 0;
+}
+
+header .topNav {
+  border-bottom: 1px solid #dbdada;
+}
+
+header .topNav .logo {
+  color: white;
+  font-style: italic;
+}
+
+header .topNav .logo .span {
+  color: #e2e9f8;
+  text-shadow: 1px -1px #0e31a5, 2px -2px #0258b9, 3px -3px 0.5px #023875, 4px -4px 0.5px #57a1f5;
+  font-size: 2.5em;
+}
+
+header .topNav div {
+  text-align: center;
+  margin: auto;
+}
+
+header .topNav div a {
+  color: white;
+  padding: 1.1em;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+header .topNav div a:hover {
+  border-bottom: 1.7px solid white;
+  color: #dad8d8;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  text-decoration: none;
+}
+
+header .topNav .log button {
+  color: white;
+  background: none;
+  border-radius: 28px;
+  padding: 0.7em 1.6em;
+  font-weight: 500;
+  font-size: 0.8em;
+  border: 1px solid white;
+  margin-left: 0.5em;
+  text-decoration: none;
+  outline: none;
+}
+
+header .topNav .log button:hover {
+  color: black;
+  background-color: white;
+}
+
+header .welcome {
+  min-height: 80vh;
+  color: white;
+  padding: 7em 8em 3em 8em;
+  text-shadow: 1px 1px black;
+}
+
+header .welcome h2 {
+  padding: 0 0.8em;
+  font-size: 4.5em;
+  font-weight: 320;
+}
+
+header .welcome h3 {
+  font-size: 1.45em;
+  font-weight: 450;
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+}
+
+header .welcome button {
+  color: white;
+  background: none;
+  border-radius: 28px;
+  border: 1.5px solid white;
+  padding: 0.6em 5em;
+  text-shadow: 1px 1px black;
+  font-weight: 500;
+  font-size: 1em;
+  text-decoration: none;
+  outline: none;
+}
+
+header .welcome button:hover {
+  color: black;
+  background-color: white;
+  text-shadow: none;
+}
+
+header .popUp {
+  padding: 0;
+  margin: 0;
+}
+
+header .personal-drop,
+header .business-drop {
+  display: none;
+  width: 100vw;
+  padding: 2em 7em;
+  background: #2892ee;
+  background: radial-gradient(circle, #2892ee 0%, #0518ab 95%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition-property: display;
+  transition-property: display;
+}
+
+header .personal-drop .col-4,
+header .business-drop .col-4 {
+  padding: 0;
+  color: #f5f3f3;
+  font-size: 0.8em;
+  text-shadow: 0.5px 0.5px black;
+  max-width: 300px;
+  margin-right: 3em;
+  margin-bottom: 0.2em;
+}
+
+header .personal-drop .col-4 span,
+header .business-drop .col-4 span {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* responsive menu */
+.topNav .Fa-bars {
+  position: absolute;
+  display: none;
+  right: 16px;
+  top: 12px;
+  color: white;
+  padding: 0.4em;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.Toggled {
+  background: #2892ee;
+  background: radial-gradient(circle, #2892ee 0%, #0518ab 95%);
+}
+
+.Main {
+  padding: 6em;
+  height: 90vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #f7f9fa;
+}
+
+.Main .Title {
+  font-size: 2.6em;
+  font-weight: 350;
+}
+
+.Main .info {
+  font-weight: 650;
+  font-size: 0.88em;
+  color: #337dd1;
+}
+
+/*Styling for the Cards */
+.Cards {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3em 1em;
+}
+
+.Cards .col-lg-3 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.flip-card {
+  background-color: white;
+  max-width: 250px;
+  min-height: 220px;
+  margin: 1em;
+  border: none;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+  padding: 0.5em;
+}
+
+.flip-card-front h4 {
+  font-weight: 300;
+  font-size: 1.4em;
+  margin: 0.3em 0 2.2em 0;
+}
+
+.flip-card-front .fa-gradient {
+  background: -webkit-gradient(linear, left top, left bottom, from(#5e9bf7), to(#304ce9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.flip-card-back {
+  background: #4294d2;
+  background: radial-gradient(circle, #4294d2 17%, #154eeb 70%);
+  color: white;
+  padding: 0.5em;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip-card-back h4 {
+  font-weight: 300;
+  font-size: 1.4em;
+  margin: 0.3em 0 1.5em 0;
+}
+
+.flip-card-back p {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.flip-card-back h5 {
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 0.5em;
+  border: 1px solid white;
+  border-radius: 25px;
+  margin: 0 3em;
+}
+
+footer {
+  height: 25vh;
+  padding: 3em;
+}
+
+footer .container-fluid {
+  padding: 0.5em 5em 3em 5em;
+}
+
+footer .container-fluid .col-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer .container-fluid .navigation {
+  padding-bottom: 0.6em;
+  border-bottom: 1px dotted gray;
+}
+
+footer .container-fluid .navigation a {
+  margin-right: 1em;
+  color: #424242;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+footer .container-fluid .navigation .globe {
+  position: absolute;
+  margin-right: 0.4em;
+  color: #2929f1;
+  right: 0;
+}
+
+footer .container-fluid .Links {
+  text-align: end;
+}
+
+footer .container-fluid .Links a {
+  font-weight: 500;
+  font-size: 1.3em;
+  text-decoration: underline;
+  color: #8f8c8c;
+}
+
+footer .container-fluid .Links .fab {
+  margin: 0.5em 0 0 0.7em;
+}
+
+footer .container-fluid .Links span .fa-html5 {
+  color: #f16529;
+}
+
+footer .container-fluid .Links span .fa-sass {
+  color: #cd6799;
+}
+
+footer .container-fluid .Links span .fa-bootstrap {
+  color: #793865;
+}
+
+footer .container-fluid .Links span .fa-js {
+  color: #f8e35d;
+}
+/*# sourceMappingURL=main.css.map */

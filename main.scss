@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./image/people.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .head {
+    padding: 0;
+  }
+  .topNav {
+    border-bottom: 1px solid rgb(219, 218, 218);
+    .logo {
+      color: white;
+      font-style: italic;
+      .span {
+        color: rgb(226, 233, 248);
+        text-shadow: 1px -1px #0e31a5, 2px -2px #0258b9, 3px -3px 0.5px #023875,
+          4px -4px 0.5px #57a1f5;
+        font-size: 2.5em;
+      }
+    }
+
+    div {
+      text-align: center;
+      margin: auto;
+
+      a {
+        color: white;
+        padding: 1.1em;
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+      a:hover {
+        border-bottom: 1.7px solid white;
+        color: rgb(218, 216, 216);
+        text-emphasis: none;
+        text-decoration: none;
+      }
+    }
+    .log {
+      button {
+        color: white;
+        background: none;
+        border-radius: 28px;
+        padding: 0.7em 1.6em;
+        font-weight: 500;
+        font-size: 0.8em;
+        border: 1px solid white;
+        margin-left: 0.5em;
+        text-decoration: none;
+        outline: none;
+      }
+
+      button:hover {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+
+  .welcome {
+    min-height: 80vh;
+    color: white;
+    padding: 7em 8em 3em 8em;
+    text-shadow: 1px 1px black;
+
+    h2 {
+      padding: 0 0.8em;
+      font-size: 4.5em;
+      font-weight: 320;
+    }
+
+    h3 {
+      font-size: 1.45em;
+      font-weight: 450;
+      margin-top: 0.6em;
+      margin-bottom: 1em;
+    }
+
+    button {
+      color: white;
+      background: none;
+      border-radius: 28px;
+      border: 1.5px solid white;
+      padding: 0.6em 5em;
+      text-shadow: 1px 1px black;
+      font-weight: 500;
+      font-size: 1em;
+      text-decoration: none;
+      outline: none;
+    }
+    button:hover {
+      color: black;
+      background-color: white;
+      text-shadow: none;
+    }
+  }
+  .popUp {
+    padding: 0;
+    margin: 0;
+  }
+  .personal-drop,
+  .business-drop {
+    display: none;
+    width: 100vw;
+    padding: 2em 7em;
+    background: rgb(40, 146, 238);
+    background: radial-gradient(
+      circle,
+      rgba(40, 146, 238, 1) 0%,
+      rgba(5, 24, 171, 1) 95%
+    );
+    justify-content: center;
+    transition-property: display;
+    .col-4 {
+      padding: 0;
+      color: rgb(245, 243, 243);
+      font-size: 0.8em;
+      text-shadow: 0.5px 0.5px black;
+
+      max-width: 300px;
+      margin-right: 3em;
+      margin-bottom: 0.2em;
+      span {
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* responsive menu */
+@mixin responsive {
+}
+.topNav .Fa-bars {
+  position: absolute;
+  display: none;
+  right: 16px;
+  top: 12px;
+
+  color: white;
+  padding: 0.4em;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.Toggled {
+  background: rgb(40, 146, 238);
+  background: radial-gradient(
+    circle,
+    rgba(40, 146, 238, 1) 0%,
+    rgba(5, 24, 171, 1) 95%
+  );
+}
+
+.Main {
+  padding: 6em;
+  height: 90vh;
+  justify-content: center;
+  text-align: center;
+  background-color: #f7f9fa;
+
+  .Title {
+    font-size: 2.6em;
+    font-weight: 350;
+  }
+
+  .info {
+    font-weight: 650;
+    font-size: 0.88em;
+    color: #337dd1;
+  }
+}
+
+/*Styling for the Cards */
+
+.Cards {
+  justify-content: center;
+  margin: 3em 1em;
+  .col-lg-3 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.flip-card {
+  background-color: white;
+  max-width: 250px;
+  min-height: 220px;
+  margin: 1em;
+  border: none;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+  padding: 0.5em;
+
+  h4 {
+    font-weight: 300;
+    font-size: 1.4em;
+    margin: 0.3em 0 2.2em 0;
+  }
+
+  .fa-gradient {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgb(94, 155, 247)),
+      to(rgb(48, 76, 233))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.flip-card-back {
+  background: rgb(66, 148, 210);
+  background: radial-gradient(
+    circle,
+    rgba(66, 148, 210, 1) 17%,
+    rgba(21, 78, 235, 1) 70%
+  );
+
+  color: white;
+  padding: 0.5em;
+  transform: rotateY(180deg);
+
+  h4 {
+    font-weight: 300;
+    font-size: 1.4em;
+    margin: 0.3em 0 1.5em 0;
+  }
+
+  p {
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  h5 {
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 0.5em;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin: 0 3em;
+  }
+}
+
+footer {
+  height: 25vh;
+  padding: 3em;
+  .container-fluid {
+    padding: 0.5em 5em 3em 5em;
+
+    .col-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .navigation {
+      padding-bottom: 0.6em;
+      border-bottom: 1px dotted gray;
+      a {
+        margin-right: 1em;
+        color: rgb(66, 66, 66);
+        font-weight: 500;
+        font-size: 0.9em;
+      }
+      .globe {
+        position: absolute;
+        margin-right: 0.4em;
+        color: rgb(41, 41, 241);
+        right: 0;
+      }
+    }
+    .Links {
+      text-align: end;
+      a {
+        font-weight: 500;
+        font-size: 1.3em;
+        text-decoration: underline;
+        color: rgb(143, 140, 140);
+      }
+      .fab {
+        margin: 0.5em 0 0 0.7em;
+      }
+      span {
+        .fa-html5 {
+          color: #f16529;
+        }
+        .fa-sass {
+          color: #cd6799;
+        }
+        .fa-bootstrap {
+          color: rgb(121, 56, 101);
+        }
+        .fa-js {
+          color: rgb(248, 227, 93);
+        }
+      }
+    }
+  }
+}
